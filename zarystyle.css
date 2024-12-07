@@ -1,0 +1,51 @@
+html{
+    text-align: center;
+}
+@font-face {
+    font-family: 'Comic Neue';
+    font-style: normal;
+    font-weight: 400;
+    src: url('josefinsans.ttf') format('truetype');
+}
+a{
+    color: #0064a7;
+}
+.mainContent{
+    
+    font-family: 'Comic Neue';
+    font-weight: bold;
+    padding: 25px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: #90101b 10px solid;
+    width: 700px;
+    background-image: url("mainContent_pattern.png");
+}
+.landingPageContent{
+    
+    font-family: 'Comic Neue';
+    font-weight: bold;
+    padding: 25px;
+    padding-bottom: 2px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    border: #90101b 15px solid;
+    width: 700px;
+    background-image: url("mainContent_pattern.png");
+}
+.sideContent{
+    font-family: 'Comic Neue';
+    font-weight: bold;
+    padding: 25px;
+    text-align: center; 
+    border: #5fa6e4 3px solid;
+    list-style: none;
+    display: inline-block;
+    width: 100px;   
+}
+.bg{
+    background-image:url("test_pattern.png");
+    background-color: #5bc57a;
+}

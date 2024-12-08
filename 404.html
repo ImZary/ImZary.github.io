@@ -1,64 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.cdnfonts.com/css/futura-std-4" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>We're Sorry, the page you requested doesn't exist, how about you play Pebble Dash instead?</title>
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
-    <style>
-    @import url('https://fonts.cdnfonts.com/css/futura-std-4');
-    </style>
-    
-     <style>
-   body {background-color: #282828;} 
-   button {
-  border: none;
-  cursor: pointer;
-  appearance: none;
-  background-color: inherit;
-}
 
-    
-   #center{
-  margin: auto;
-  width: 20%;
-  border: 30px hidden;
-  padding: 100px;
-  align-items: center;
-   }
-     #textCenter{
-  margin: auto;
-  width: 50%;
-  padding: 0px;
-  align-items: center;
-   }
-  
-  
-    
- 
-   </style>
-  </head>
-  
-  <body> 
-  <audio id="song" src="https://files.catbox.moe/zahzis.ogg" loop></audio> 
-  <div id=center>
-  
-    <button id="zaryBtn" type="submit" onclick="playSong()">
-        <img src="/zaryDance.gif" alt="dancingZary" border="0" />
-      </button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Light Hearted Lanterns</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png">
+</head>
 
-    <script>
-        // JavaScript to handle the button click
-        document.getElementById('zaryBtn').addEventListener('click', function() {
-            var audio = document.getElementById('song');
-            audio.play();
-        });
-    </script>
-  </div>
-    
-    
+<body>
+  <audio id="song" src="https://files.catbox.moe/zahzis.ogg" loop preload></audio>
+  <main>
+    <div class="Zary">
+      <img id="dancingZary" src="Assets/Images/zaryDance.gif" alt="dancingZary" />
+    </div>
+    <h1>Something went wrong</h1>
+  </main>
+</body>
 
-  </body>
-  
+<script>
+  const zary = document.getElementById('dancingZary');
+  const audio = document.getElementById('song');
+
+  zary.addEventListener('click', function () {
+    if(audio.paused)
+      audio.play();
+    else
+      audio.pause();
+  });
+
+  let time = 0;
+  requestAnimationFrame(turnZary);
+
+  function turnZary(elapsed) {
+    if(!audio.paused) {
+      time += 0.001;
+
+      zary.style.transform = "rotate(" + (Math.sin(time) * 2) + "turn)";
+    }
+
+    requestAnimationFrame(turnZary);
+  }
+</script>
+
 </html>

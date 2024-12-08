@@ -1,17 +1,92 @@
-/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
-   HTML content. To learn how to do something, just try searching Google for questions like
-   "how to change link color." */
-.center{
-   margin: auto;
-  width: 20%;
-  border: 3px hidden;
-  padding: 10px;
-  align-items: center;
-  }
-  
+@font-face {
+  font-family: "Comic";
+  src: url("Assets/Fonts/comicneue.ttf");
+}
+
+@font-face {
+  font-family: "Josefin";
+  src: url("Assets/Fonts/josefinsans.ttf");
+}
+
+:root {
+  font-family: Josefin;
+}
+
 body {
-  background-color: white;
-  color: black;
-  font-family: Verdana;
-  align-content: center;
+  background: url("Assets/Images/test_pattern.png") repeat;
+  
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+
+  animation: background-anim 20s linear infinite;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  min-height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@keyframes background-anim {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+a {
+  text-decoration: underline dotted;
+  font-weight: bold;
+  font-size: larger;
+  color: #5294e0;
+
+  display: inline-block;
+
+  transition: filter 250ms ease, transform 250ms ease;
+}
+
+a:visited {
+  color: #5f2dbd;
+}
+
+a:hover {
+  filter: saturate(2);
+
+  text-decoration: underline solid;
+  transform: scale(1.2);
+  
+  background: url("Assets/Images/mainContent_pattern.png") repeat;
+  z-index: 1;
+  box-shadow: 0px 0px 5px black;
+}
+
+.container {
+  background: url("Assets/Images/mainContent_pattern.png");
+  padding: 1rem;
+  border: solid maroon 15px;
+  width: 40%;
+}
+
+.container:not(:first-child) {
+  margin-top: 4rem;
+}
+
+.container > * {
+  text-align: center;
+}
+
+.container > img {
+  height: auto;
+  width: 100%;
 }
